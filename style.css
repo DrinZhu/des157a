@@ -1,0 +1,135 @@
+body {
+    margin: 0%;
+    background-color: #FFFCF8;
+}
+
+.bannerContent {
+    background-color: #6F6F79;
+    animation: color 18s infinite linear;
+    margin: 0%;
+    position: relative;
+    padding: 10px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+@keyframes color {
+    0%   { background:#6F6F79; }
+    33%  { background: #E3BBB1; }
+    66%  { background: #ADBDBC; }
+    100% { background: #6F6F79; }
+  }
+
+header {
+    margin: 0%;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 800;
+    font-style: italic;
+    color: #6F6F79;
+    text-align: center;
+}
+
+main {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+}
+
+.shell {
+    position: relative;
+    min-width: 1000px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* set 3d effect */
+    transform-style: preserve-3d;
+    perspective: 900px;
+}
+
+.shell .box {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    transition: .3s;
+    overflow: hidden;
+    margin: 30px;
+    transform: rotateY(0);
+    transition-delay: .1s;
+    border-radius: 10px;
+    border: white 5px solid;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .7);
+}
+
+.shell .box .images img{
+    width: 100%;
+}
+
+.shell:hover .box{
+    transform: rotateY(20deg);
+}
+
+.shell .box:hover{
+    transform: rotateY(0deg) scale(1.25);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, .7);
+    z-index: 1;
+}
+
+.shell .box:hover~.box{
+    transform: rotateY(-20deg);
+}
+
+.shell .box .content{
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    z-index: 999;
+    padding: 15px;
+    font-family: 'Gruppo', sans-serif;
+}
+
+.shell .box .content nav ul {
+    list-style: none;
+    text-align: center;
+    padding-right: 40px;
+    padding: 10px;
+    line-height: 2em;
+
+}
+
+.shell .box .content nav a {
+    text-decoration: none;
+    color: #6F6F79;
+    text-align: center;
+    font-size: 16px;
+    display: block;
+}
+
+.shell .box .content nav a:hover {
+    color: #141313;
+    transform: scale(1.2);
+}
+
+.shell .box .content h2{
+    font-family: 'Playfair Display', serif;
+    color: #6F6F79;
+    transform: .3s;
+    font-size: 20px;
+    transform: rotateY(-150px);
+    text-align: center;
+}
+
+.shell .box:hover .content h2{
+    transform: rotateY(-15px);
+}
+
+footer {
+    font-family: 'Gruppo', sans-serif;
+    color: #6F6F79;
+    text-align: center;
+}
