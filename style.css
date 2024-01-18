@@ -133,3 +133,8 @@ footer {
     color: #6F6F79;
     text-align: center;
 }
+
+footer a {
+    text-decoration: none;
+    color: #6F6F79;;
+}
