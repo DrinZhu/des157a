@@ -1,0 +1,160 @@
+h1 {
+    text-align: center;
+    margin-top: 80px;
+    color: #000;
+    font-family: Rufina;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+main {
+    margin-top: 160px;
+    margin-left: 400px;
+}
+
+.post {
+    margin-left: 0px;
+    padding-left: 30px;
+    border-left: #000 2px solid;
+}
+
+h2 {
+    margin: auto;
+    color: #000;
+    font-family: Rufina;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 127.344%;
+}
+
+h2 a {
+    color: #000;
+}
+
+body {
+    color: #000;
+    font-family: Caudex;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 127.344%;
+}
+
+.journal {
+    display: flex;
+}
+
+.content{
+    display: block;
+    width: 438px;
+    margin-left: 28px;
+    /* margin: 50px; */
+}
+
+time {
+    text-align: right;
+    padding-left: 350px;
+    color: #000;
+    font-family: Caudex;
+    font-size: 8px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 127.344%; 
+}
+
+.rm {
+    margin-left: 333px;
+    width: 113px;
+    height: 26px;
+    color: #000;
+    font-family: Caudex;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 30px;
+    border: 1px solid #000;
+    text-decoration: none;
+}
+
+a.rm {
+    margin-left: 335px;
+    margin-top: 100px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rm:hover{
+    background-color: #000;
+    color: white;
+}
+
+.content p{
+    margin-bottom: 90px;
+}
+
+/* @media only screen and (min-width: 600px) {
+    main{
+        display: flex;
+        justify-content: center;
+    }
+} */
+
+.inner {
+    display: flex;
+    align-items: center;
+    margin: 100px;
+    margin-left: 190px;
+    margin-right: 190px;   
+    gap: 50px;
+}
+
+.left{
+    margin-bottom: auto;
+    border-right: #000 2px solid;
+    padding-top: 11px;
+    padding-right: 40px;
+    padding-left: 50px;
+}
+
+.left h2{
+    text-align: right;
+    font-family: Rufina;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 127.344%;
+    padding-right: 0px;
+}
+
+.right {
+    text-align: start; 
+    padding-left: 5px;
+}
+
+.right time {
+    padding: 0cap;
+    padding-top: 20px;
+}
+
+.right p {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 529px;
+    font-family: Caudex;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 127.344%;
+    padding-right: 50px;
+}
+
+.right p a {
+    text-decoration: none;
+    color: #000;
+}
+
