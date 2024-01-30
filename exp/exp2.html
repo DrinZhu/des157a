@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1>Guess my favourite Pokémon!</h1>
+    <h2 id="response"></h2>
+    <img id="image" src="" alt="imageResult" style="max-width: 600px">
+
+    <script>
+// I asked customers to guess my favorite Pokémon of them all out of the following five Pokémon, Pikachu, Gengar, Psyduck, Ditto and Flareon. Then if the customer guessed correctly, I would tell him that he guessed correctly, and vice versa I would tell him that he guessed incorrectly but I would put all the appropriate picture. Entering words other than the five Pokémon above will not result in a picture.
+
+        // Prompt the user to guess your favorite Pokémon
+        var start = prompt("Guess my favourite pokemon among Pikachu, Gengar, Psyduck, Ditto and Flareon?", "");
+        
+        // Array of possible favorite Pokémon
+        var pokemons = ["Pikachu", "Gengar", "Psyduck", "Ditto", "Flareon"];
+
+        // Function to check if the guessed Pokémon is "Ditto"
+        function guess(name) {
+            if (name === "Ditto") {
+                document.getElementById("response").innerText = "You are right!";
+                document.getElementById("image").src = "image/Ditto.png"; 
+            } else if (name === "Pikachu") {
+                document.getElementById("response").innerText = "Oops! You are wrong! But let me show you the cute Pokémon...";
+                document.getElementById("image").src = "image/Pikachu.png";
+            } else if (name === "Gengar") {
+                document.getElementById("response").innerText = "Oops! You are wrong! But let me show you the cute Pokémon...";
+                document.getElementById("image").src = "image/Gengar.png";
+            } else if (name === "Psyduck") {
+                document.getElementById("response").innerText = "Oops! You are wrong! But let me show you the cute Pokémon...";
+                document.getElementById("image").src = "image/Psyduck.png";
+            } else if (name === "Flareon") {
+                document.getElementById("response").innerText = "Oops! You are wrong! But let me show you the cute Pokémon...";
+                document.getElementById("image").src = "image/Flareon.png";
+            } else {
+                document.getElementById("response").innerText = "Oops! You are wrong!";
+            }
+        }
+
+        // Call the guess function
+        guess(start);
+    </script>
+</body>
+</html>

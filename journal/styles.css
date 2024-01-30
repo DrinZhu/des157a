@@ -11,7 +11,39 @@ h1 {
 
 main {
     margin-top: 160px;
-    margin-left: 400px;
+    margin-left: 225px;
+    display: flex;
+    justify-items: center;
+}
+
+.navigation {
+    margin-right: 50px;
+}
+
+ul li {
+    list-style: none;
+    margin: 20px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #000;
+    font-family: Caudex;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 30px;
+    border: 1px solid #000;
+    transition: background-color 0.3s ease-in-out;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+ul li a:hover {
+    background-color: #000;
+    color: white;
 }
 
 .post {
@@ -77,6 +109,7 @@ time {
     border-radius: 30px;
     border: 1px solid #000;
     text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
 }
 
 a.rm {
@@ -108,15 +141,15 @@ a.rm {
     display: flex;
     align-items: center;
     margin: 150px; 
-    gap: 50px;
+    gap: 30px;
 }
 
 .left{
     margin-bottom: auto;
-    border-right: #000 2px solid;
+    /* border-right: #000 2px solid; */
     padding-top: 11px;
-    padding-right: 40px;
-    padding-left: 50px;
+    padding-right: 10px;
+    padding-left: 30px;
 }
 
 .left img{
@@ -133,8 +166,22 @@ a.rm {
     padding-right: 0px;
 }
 
+.left nav {
+    margin: auto;
+}
+
+.left li {
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.left nav ul {
+    padding-left:250px;
+}
+
 .right { 
-    padding-left: 5px;
+    padding-left: 20px;
+    border-left: #000 2px solid;
 }
 
 .right time {
