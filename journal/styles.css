@@ -136,6 +136,25 @@ a.rm {
         justify-content: center;
     }
 } */
+.innerHead h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.inJournal nav {
+    margin: auto;
+    padding-top: 30px;
+}
+
+.inJournal li {
+    margin: 0 20px;
+}
+
+.inJournal ul {
+    display: flex;
+    justify-content: center;    
+    padding-top: 30px;
+}
 
 .inner {
     display: flex;
@@ -149,7 +168,7 @@ a.rm {
     /* border-right: #000 2px solid; */
     padding-top: 11px;
     padding-right: 10px;
-    padding-left: 30px;
+    padding-left: 20px;
 }
 
 .left img{
@@ -164,19 +183,6 @@ a.rm {
     font-weight: 700;
     line-height: 127.344%;
     padding-right: 0px;
-}
-
-.left nav {
-    margin: auto;
-}
-
-.left li {
-    margin: auto;
-    padding-bottom: 20px;
-}
-
-.left nav ul {
-    padding-left:250px;
 }
 
 .right { 
