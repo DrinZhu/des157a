@@ -66,7 +66,8 @@ main {
 }
 
 .shell .box .images img{
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 .shell:hover .box{
@@ -137,4 +138,49 @@ footer {
 footer a {
     text-decoration: none;
     color: #6F6F79;;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-color: #fff; /* Example change for smaller screens */
+    }
+
+    .shell {
+        min-width: auto; /* Adjust layout for smaller screens */
+        flex-direction: column; /* Stack the boxes vertically */
+    }
+
+    .shell .box {
+        width: 90%; /* Make boxes wider to fit small screens */
+        margin: 20px auto; /* Adjust margin for vertical layout */
+        transform: none; /* Remove 3D effect for simplicity on small screens */
+    }
+
+    header {
+        font-size: 24px; /* Adjust header font size for smaller screens */
+    }
+
+    .bannerContent {
+        font-size: 20px; /* Adjust banner content font size */
+    }
+
+    .shell .box .content nav a {
+        font-size: 14px; /* Adjust navigation link font size */
+    }
+
+   /* Cancel Y-axis rotation for mobile */
+   .shell .box,
+   .shell:hover .box,
+   .shell .box:hover {
+       transform: none !important; /* Override any rotation and use !important to ensure it takes precedence */
+       transition: none !important; /* Optionally, remove transitions to avoid unwanted effects */
+   }
+
+   .shell .box:hover~.box {
+       transform: none !important; /* Also cancel any effects on sibling elements when a box is hovered */
+   }
+
+   .shell .box .content h2 {
+       transform: none !important; /* Reset any Y-axis transformations applied to headings or other content */
+   }
 }
