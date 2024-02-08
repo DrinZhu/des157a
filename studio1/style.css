@@ -2,10 +2,10 @@ h1 {
     font-weight: 900;
     font-size: 96px;
     color: #2F2F3B;
-    padding-left: 760px;
+    padding-left: 740px;
     margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 body {
     background-image: url('image/madlibsBG.png');
@@ -30,7 +30,7 @@ form {
 
 .right {
     margin: 0;
-    padding-top: 294px;
+    padding-top: 348px;
     padding-left: 90px;
 }
 
@@ -38,6 +38,11 @@ p{
     font-weight: 900;
     font-size: 20px;
     color: #F7F0E4;
+}
+
+#content p {
+    font-weight: 300;
+    font-size: 10px;
 }
 
 input, label {
@@ -79,6 +84,27 @@ input[type="submit"]:hover{
     border:1px solid #F7F0E4;
 }
 
+.close {
+    display: block; /* Makes the button a block element */
+    margin: auto;
+    width: 190px;
+    border:1px solid #FCB34B;
+    border-radius: 30px;
+    background-color: #FCB34B;
+    color: #F7F0E4;
+    padding: 5px;    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+.close:hover {
+    transition: 0.5s;
+    background-color: #507551;
+    border:1px solid #F7F0E4;
+}
+
 /* .madlib {
     color: #FCB34B;
     font-weight: 300;
@@ -109,7 +135,9 @@ input[type="submit"]:hover{
 
 #overlay article {
     box-sizing: border-box;
-    background-color:#E15F3D;
+    border-radius: 30px;
+    border: #F7F0E4 5px solid;
+    background-color:#507551;
     padding: 20px;
     width: 50vw;
     height: 80vh;
@@ -117,6 +145,18 @@ input[type="submit"]:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#madlib p{
+    margin: 20px;
+}
+
+#content {
+    font-size: 18px; /* Example: Change font size */
+    color: #F7F0E4; /* Example: Change text color */
+    line-height: 1.5; /* Example: Adjust line spacing */
+    font-weight: 300;
+    margin: 20px;
 }
 
 /* Base styles remain the same, insert this section at the bottom of your existing CSS */
