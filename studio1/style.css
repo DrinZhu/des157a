@@ -2,7 +2,7 @@ h1 {
     font-weight: 900;
     font-size: 96px;
     color: #2F2F3B;
-    padding-left: 740px;
+    padding-left: 750px;
     margin: auto;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -64,6 +64,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-color: #F7F0E4;
 }
 
 input[type="submit"] {
@@ -212,6 +213,10 @@ input[type="submit"]:hover{
 
     .madlib {
         font-size: 14px; /* Adjust font size for readability on mobile */
+    }
+
+    #content {
+        font-size: 10px;
     }
 }
 
