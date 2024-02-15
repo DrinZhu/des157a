@@ -212,3 +212,16 @@ a.rm {
     color: #000;
 }
 
+figure {
+    float: right;
+}
+
+#noodle {
+    float: left;
+}
+
+figcaption {
+    text-align: center;
+}
+
+
