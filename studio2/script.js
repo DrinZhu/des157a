@@ -70,4 +70,58 @@
     }
 
 
+    const meme3 = document.querySelector('#wait3')
+
+    const images3= ['image1.png', 'image9.gif']
+    let currentImage3 = 0;
+
+    document.querySelector('#send3').addEventListener('click', nextPhoto3);
+    function nextPhoto3(){
+        currentImage3 = (currentImage3 + 1) % images3.length;
+        meme3.src=`images/${images3[currentImage3]}`;
+    }
+
+    document.querySelector('#clear3').addEventListener('click', clearPhoto3);
+    function clearPhoto3(){
+        currentImage3 = (currentImage3 - 1) % images3.length;
+        meme3.src=`images/${images3[currentImage3]}`;
+    }
+
+
+    const meme4 = document.querySelector('#wait4')
+
+    const images4= ['image1.png', 'image10.gif']
+    let currentImage4 = 0;
+
+    document.querySelector('#send4').addEventListener('click', nextPhoto4);
+    function nextPhoto4(){
+        currentImage4 = (currentImage4 + 1) % images4.length;
+        meme4.src=`images/${images4[currentImage4]}`;
+    }
+
+    document.querySelector('#clear4').addEventListener('click', clearPhoto4);
+    function clearPhoto4(){
+        currentImage4 = (currentImage4 - 1) % images4.length;
+        meme4.src=`images/${images4[currentImage4]}`;
+    }
+
+
+    const meme5 = document.querySelector('#wait5')
+
+    const images5= ['image1.png', 'image11.gif']
+    let currentImage5 = 0;
+
+    document.querySelector('#send5').addEventListener('click', nextPhoto5);
+    function nextPhoto5(){
+        currentImage5 = (currentImage5 + 1) % images5.length;
+        meme5.src=`images/${images5[currentImage5]}`;
+    }
+
+    document.querySelector('#clear5').addEventListener('click', clearPhoto5);
+    function clearPhoto5(){
+        currentImage5 = (currentImage5 - 1) % images5.length;
+        meme5.src=`images/${images5[currentImage5]}`;
+    }
+
+
 })()
