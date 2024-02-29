@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of PIG</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="game-container">
+        <div class="player" id="player1">
+            <h2>PLAYER 1</h2>
+            <!-- <div class="avatar" style="background-color: red;">🍓</div> -->
+            <img src="images/tomato.png"  alt="tomato" weight="235" height="222">;
+            <div class="score">1</div>  
+            <div class="current-score" id="currentScore1">
+                <div>CURRENT</div>
+                <div class="scoreNumber">10</div>
+            </div>      
+        </div>
+        <div class="dice-area">
+            <button class="new-game-button">NEW GAME</button>
+            <div class="dice-placeholder">
+                <img src="images/1die.jpg" alt="dice1" >;
+                <img src="images/1die.jpg" alt="dice1" >;
+            </div>
+            <div class="rollHoldButton">
+                <button class="roll-button">ROLL DICES</button>
+                <button class="roll-button">HOLD</button>
+            </div>
+        </div>
+        <div class="player" id="player2">
+            <h2>PLAYER 1</h2>
+            <img src="images/orange.png"  alt="tomato" weight="235" height="222">;
+            <div class="score">4</div>
+            <div class="current-score" id="currentScore2">
+                <div>CURRENT</div>
+                <div class="scoreNumber">15</div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
