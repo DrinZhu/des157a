@@ -1,0 +1,81 @@
+h1 {
+    text-align: center;
+    margin-top: 80px;
+    color: #000;
+    font-family: Rufina;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.innerHead h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.inJournal nav {
+    margin: auto;
+    padding-top: 30px;
+}
+
+.inJournal li {
+    margin: 0 20px;
+}
+
+.inJournal ul {
+    display: flex;
+    justify-content: center;    
+    padding-top: 30px;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    margin: 150px; 
+    gap: 30px;
+}
+
+.left{
+    margin-bottom: auto;
+    /* border-right: #000 2px solid; */
+    padding-top: 11px;
+    padding-right: 10px;
+    padding-left: 20px;
+}
+
+.left img{
+    padding-left: 140px;
+}
+
+.left h2{
+    text-align: right;
+    font-family: Rufina;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 127.344%;
+    padding-right: 0px;
+}
+
+.right { 
+    padding-left: 20px;
+    border-left: #000 2px solid;
+}
+
+.right time {
+    padding: 0cap;
+    padding-top: 20px;
+}
+
+.right p {
+    margin: auto;
+    margin-bottom: 10px;
+    /* width: 520px; */
+    font-family: Caudex;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 127.344%;
+    padding-right: 50px;
+}
