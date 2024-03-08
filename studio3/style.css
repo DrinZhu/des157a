@@ -2,71 +2,22 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     justify-content: center;
-}
-
-.game-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.player {
-    flex: 1;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: #333;
+    padding: 50px;
+    line-height: 1.5em;
+}
+
+.gameContent {
     justify-content: center;
-}  
-
-h2 {
-    font-size: 64px;
-    margin: 20px;
-}
-
-.dice-area {
-    margin-top: 25px;
-    text-align: center;
-}
-
-.score {
-    font-weight: 300;
-    font-size: 128px;
-}
-
-.current-score {
-    margin: 15px;
-    padding: 20px;
-    /* Optionally, you can explicitly set a width and height */
-    width: 150px; 
-    height: 120px;
-    color: white; 
-  }
-
-#currentScore1 {
-    background-color: #EB4D4D;
-    border: 1px solid #EB4D4D;
-    border-radius: 30px;
-}
-
-#currentScore2 {
-    background-color: #F7A265;
-    border: 1px solid #F7A265;
-    border-radius: 30px;
-}
-
-.scoreNumber {
-    font-weight: 600;
-    font-size: 96px;
-}
-
-.rollHoldButton {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-.roll-button, .new-game-button {
+div {
+    padding: 10px;
+}
+
+button { 
     background-color: transparent;
     margin: 10px;
     padding: 10px;
@@ -78,12 +29,44 @@ h2 {
     transition: background-color 0.3s ease-in-out;
 }
 
-.roll-button:hover, .new-game-button:hover {
+button:hover {
     background-color: #000; /* Changes the background to black */
     color: white; /* Changes the text color to white */
 }
 
-.dice-placeholder{
-    margin-top: 200px;
-    margin-bottom: 100px;
+.currentScores {
+    font-weight: 300;
+    font-size: 32px;
 }
+
+#currentScore1 {
+    background-color: #EB4D4D;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 250px;
+    margin-left: 30px;
+    border: 1px solid #EB4D4D;
+    border-radius: 30px;
+    color: white;
+    font-weight: 700;
+    font-size: 100px;
+    /* width: 150px; 
+    height: 120px; */
+}
+
+#currentScore2 {
+    background-color: #F7A265;
+    border: 1px solid #F7A265;
+    border-radius: 30px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 250px;
+    margin-left: 42px;
+    color: white;
+    font-weight: 700;
+    font-size: 100px;
+    /* width: 150px; 
+    height: 120px; */
+}
+
+

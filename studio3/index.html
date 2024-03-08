@@ -5,43 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game of PIG</title>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="game-container">
-        <div class="player" id="player1">
-            <h2>PLAYER 1</h2>
-            <!-- <div class="avatar" style="background-color: red;">🍓</div> -->
-            <img src="images/tomato.png"  alt="tomato" weight="235" height="222">;
-            <div class="score" id="Score1">0</div>  
-            <div class="current-score" id="currentScore1">
-                <div>CURRENT</div>
-                <div class="scoreNumber">0</div>
-            </div>      
-        </div>
-        <div class="dice-area">
-            <button class="new-game-button">NEW GAME</button>
-            <div class="dice-placeholder">
-                <img src="images/dice1.png" alt="dice1" width="130" height="130" >
-                <img src="images/dice1.png" alt="dice1" width="130" height="130">
-            </div>
-            <div class="rollHoldButton">
-                <button class="roll-button" id="roll">ROLL DICES</button>
-                <button class="roll-button">HOLD</button>
-            </div>
-        </div>
-        <div class="player" id="player2">
-            <h2>PLAYER 2</h2>
-            <img src="images/orange.png"  alt="tomato" weight="235" height="222">;
-            <div class="score" id="score2">0</div>
-            <div class="current-score" id="currentScore2">
-                <div>CURRENT</div>
-                <div class="scoreNumber">0</div>
-            </div>
-        </div>
+    <h1>Game of PIG</h1>
+    <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p> 
+    <p>Oh, and if you roll two "ones" (snake eyes), your current score gets zeroed out. So don’t do that.</p>
+    <div class="gameContent">
+    <div class="player1">
+        <h2>PLAYER 1</h2>
+        <img src="images/tomato.png"  alt="tomato" weight="235" height="222">;
+        <p class="currentScores">Current Score</p>
+        <p id="currentScore1">0</p>
     </div>
-    
+    <div class="play">
+        <div id="gamecontrol">
+            <h2>Start a Game</h2>
+            <button id="startgame">Pick Player</button>
+        </div>
+
+        <div id="game"></div>
+        <div id="actions"></div>
+        <div id="score"></div>
+    </div>
+    <div class="player2">
+        <h2>PLAYER 2</h2>
+        <img src="images/orange.png"  alt="tomato" weight="235" height="222">;
+        <p class="currentScores">Current Score</p>
+        <p id="currentScore2">0</p>
+    </div>
+</div>
 </body>
 </html>

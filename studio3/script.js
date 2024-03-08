@@ -1,94 +1,128 @@
-document.addEventListener('DOMContentLoaded', function() {
-    'use strict';
+(function(){
+    'use strict'
+    console.log('reading JS');
 
-    // Selectors
-    const newGameButton = document.querySelector('.new-game-button');
-    const rollButton = document.querySelector('#roll');
-    const holdButton = document.querySelectorAll('.roll-button')[1]; // Assuming the second roll-button is for holding
-    const playerScores = [document.querySelector('#player1 .score'), document.querySelector('#player2 .score')];
-    const currentScores = [document.querySelector('#currentScore1 .scoreNumber'), document.querySelector('#currentScore2 .scoreNumber')];
-    const diceImages = document.querySelectorAll('.dice-placeholder img');
-    const players = ['Player 1', 'Player 2'];
+    const startGame = document.querySelector('#startgame');
+    const gameControl = document.querySelector('#gamecontrol');
+    const game = document.querySelector('#game');
+    const score = document.querySelector('#score');
+    const actionArea = document.querySelector('#actions');
+    const currentScore1 = document.querySelector('#currentScore1');
+    const currentScore2 = document.querySelector('#currentScore2');
 
-    // Game Data
-    let gameData = {
+    const gameData = {
         dice: ['images/dice1.png', 'images/dice2.png', 'images/dice3.png', 'images/dice4.png', 'images/dice5.png', 'images/dice6.png'],
+        players: ['player 1', 'player 2'],
         score: [0, 0],
-        currentScore: [0, 0],
-        currentPlayer: 0, // Player 1 starts
-        gameEnd: 30
+        roll1: 0,
+        roll2: 0,
+        rollSum: 0,
+        index: 0,
+        gameEnd: 29
     };
 
-    // New Game
-    newGameButton.addEventListener('click', function() {
-        gameData.score = [0, 0];
-        gameData.currentScore = [0, 0];
-        gameData.currentPlayer = Math.floor(Math.random() * 2); // Randomly choose who starts
-        updateScores();
-        console.log('Game started');
+    //console.log(gameData.players[gameData.index]);
+
+    //This gets the current player: 
+/*gameData.players[gameData.index]
+
+//This gets the first die and the second die: 
+gameData.dice[gameData.roll1-1]
+gameData.dice[gameData.roll2-1]
+
+//This gets the score of the current player: 
+gameData.score[gameData.index]
+
+//This gets the index, or turn
+gameData.index
+
+//This gets the individual dice values and the added dice value
+gameData.roll1
+gameData.roll2
+gameData.rollSum
+
+//This gets the winning threshold
+gameData.rollSum*/
+
+    startGame.addEventListener('click', function(){
+        gameData.index = Math.round(Math.random());
+        //console.log(gameData.index);
+
+        gameControl.innerHTML = '<h2>The Game Has Started</h2>';
+        gameControl.innerHTML += '<button id="quit">Wanna Quit?</button>';
+
+        document.getElementById('quit').addEventListener('click', function(){
+            location.reload();
+        });
+
+        //console.log("set up the turn");
+        setUpTurn();
     });
 
-    // Roll Dice
-    rollButton.addEventListener('click', function() {
-        let roll1 = Math.floor(Math.random() * 6) + 1;
-        let roll2 = Math.floor(Math.random() * 6) + 1;
-        diceImages[0].src = gameData.dice[roll1 - 1];
-        diceImages[1].src = gameData.dice[roll2 - 1];
+    function setUpTurn(){
+        game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
+        actionArea.innerHTML = '<button id="roll">Roll the Dice</button>';
+        document.querySelector('#roll').addEventListener('click', function(){
+            //console.log('Roll the Dice');
+            throwDice();
+        })
 
-        // Check rolls
-        if(roll1 === 1 && roll2 === 1){
-            console.log("Snake eyes!");
-            gameData.score[gameData.currentPlayer] = 0;
-            switchPlayer();
-        } else if(roll1 === 1 || roll2 === 1){
-            console.log("Rolled a one, switching player");
-            switchPlayer();
+    }
+
+    function throwDice(){
+        actionArea.innerHTML = '';
+        gameData.roll1 = Math.floor(Math.random() * 6) + 1;
+        gameData.roll2 = Math.floor(Math.random() * 6) + 1;
+        game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`
+        game.innerHTML += `<img src='${gameData.dice[gameData.roll1-1]}'><img src='${gameData.dice[gameData.roll2-1]}'>`;
+        gameData.rollSum = gameData.roll1 + gameData.roll2;
+
+        if(gameData.rollSum === 2){
+            //console.log('snake eyes!');
+            game.innerHTML += '<p>Oh snap! Snake eyes!</p>'
+            gameData.score[gameData.index] = 0;
+            gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+            setTimeout(setUpTurn, 2000);
+            showCurrentScore()
+
+        } else if ( gameData.roll1 === 1 || gameData.roll2 === 1 ) {
+            //console.log("one of two dice was a 1");
+            gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+            game.innerHTML += `<p>One of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
+            setTimeout(setUpTurn, 2000);
         } else {
-            gameData.currentScore[gameData.currentPlayer] += roll1 + roll2;
-            updateScores();
-        }
-    });
-
-    // Hold
-    holdButton.addEventListener('click', function() {
-        gameData.score[gameData.currentPlayer] += gameData.currentScore[gameData.currentPlayer];
-        gameData.currentScore[gameData.currentPlayer] = 0;
-        checkWinCondition() || switchPlayer();
-    });
-
-    function updateScores(){
-    playerScores[0].textContent = gameData.score[0];
-    playerScores[1].textContent = gameData.score[1];
-    currentScores[0].textContent = gameData.currentScore[0];
-    currentScores[1].textContent = gameData.currentScore[1];
-}
-
-    function switchPlayer(){
-        // Add current score to the total score and reset current score for the player who just finished their turn
-        gameData.score[gameData.currentPlayer] += gameData.currentScore[gameData.currentPlayer];
+            //console.log("the game proceeds...")
+            gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
+            actionArea.innerHTML = '<button id="rollagain">Roll Again</button>  <button id="pass">Pass</button>'
+            document.getElementById('rollagain').addEventListener('click', function(){
+                setUpTurn();
+            });
+            document.getElementById('pass').addEventListener('click', function(){
+                gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+                setUpTurn();
+            });
         
-        // Check for win condition before switching
-        if (!checkWinCondition()) {
-            // Switch player
-            gameData.currentPlayer = gameData.currentPlayer === 0 ? 1 : 0;
-            
-            // Update the scores to show the total and reset current score for the next player's turn
-            gameData.currentScore[gameData.currentPlayer === 0 ? 1 : 0] = 0;
-            updateScores();
-            
-            console.log(`${players[gameData.currentPlayer]}'s turn`);
+        }
+        checkWinningCondition()   
+    } //end throw the dice function
+
+    function checkWinningCondition(){
+        if(gameData.score[gameData.index] > gameData.gameEnd){
+            score.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+
+            actionArea.innerHTML = '';
+            document.getElementById('quit').innerHTML = 'Start a new game?';
+
+        } else {
+            //show current score...
+            score.innerHTML = `<p>The score is currently <strong>${gameData.players[0]} ${gameData.score[0]}</strong> and <strong>${gameData.players[1]} ${gameData.score[1]}</strong></p>`;
+            showCurrentScore()
         }
     }
 
-    function checkWinCondition() {
-        // Loop through each player to check their total score
-        for (let i = 0; i < gameData.score.length; i++) {
-            let totalScore = gameData.score[i] + gameData.currentScore[i];
-            if (totalScore >= gameData.gameEnd) {
-                alert(`${players[i]} wins!`);
-                return true; // Exit the function once a win condition is met
-            }
-        }
-        return false; // If no win condition is met, return false
+    function showCurrentScore() {
+        currentScore1.innerHTML = `${gameData.score[0]}`;
+        currentScore2.innerHTML = `${gameData.score[1]}`;
     }
-});
+
+})();
