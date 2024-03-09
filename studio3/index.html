@@ -10,13 +10,17 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Game of PIG</h1>
-    <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p> 
-    <p>Oh, and if you roll two "ones" (snake eyes), your current score gets zeroed out. So don’t do that.</p>
+    <div id="homePage">
+        <h1>Game of PIG</h1>
+        <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p> 
+        <p id="snake">Oh, and if you roll two "ones" (snake eyes), your current score gets zeroed out. So don’t do that.</p>
+        <button id="start">Start</button>
+    </div>
+    <main id="overlay" class="hidden">
     <div class="gameContent">
     <div class="player1">
         <h2>PLAYER 1</h2>
-        <img src="images/tomato.png"  alt="tomato" weight="235" height="222">;
+        <img src="images/tomato.png"  alt="tomato" height="222">;
         <p class="currentScores">Current Score</p>
         <p id="currentScore1">0</p>
     </div>
@@ -32,10 +36,11 @@
     </div>
     <div class="player2">
         <h2>PLAYER 2</h2>
-        <img src="images/orange.png"  alt="tomato" weight="235" height="222">;
+        <img src="images/orange.png"  alt="tomato" height="222">;
         <p class="currentScores">Current Score</p>
         <p id="currentScore2">0</p>
     </div>
 </div>
+</main>
 </body>
 </html>

@@ -1,14 +1,43 @@
 body {
+    margin: auto;
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     justify-content: center;
     text-align: center;
     color: #333;
-    padding: 50px;
     line-height: 1.5em;
 }
 
+#homePage {
+    margin-top: 50px;
+}
+
+#homePage p{
+    font-weight: 400;
+    text-align: justify;
+    margin: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+#snake p{
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: none;
+}
+
+main {
+    margin: auto;
+}
+
 .gameContent {
+    margin: auto;
     justify-content: center;
     display: flex;
 }
@@ -32,6 +61,10 @@ button {
 button:hover {
     background-color: #000; /* Changes the background to black */
     color: white; /* Changes the text color to white */
+}
+
+.dice-gap {
+    margin-right: 10px; /* Or whatever gap you prefer */
 }
 
 .currentScores {

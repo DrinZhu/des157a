@@ -2,6 +2,13 @@
     'use strict'
     console.log('reading JS');
 
+    document.getElementById('start').addEventListener('click', function() {
+        document.getElementById('overlay').classList.remove('hidden');
+        document.getElementById("homePage").className = "show";
+
+    });
+
+    const start = document.getElementById('start')
     const startGame = document.querySelector('#startgame');
     const gameControl = document.querySelector('#gamecontrol');
     const game = document.querySelector('#game');
@@ -20,6 +27,10 @@
         index: 0,
         gameEnd: 29
     };
+
+    const clickSound = new Audio('sounds/click-151673.mp3');
+    const diceSound = new Audio('sounds/rolling-dice-2-102706.mp3');
+    const startSound = new Audio('sounds/game-music-loop-7-145285.mp3');
 
     //console.log(gameData.players[gameData.index]);
 
@@ -49,7 +60,7 @@ gameData.rollSum*/
         //console.log(gameData.index);
 
         gameControl.innerHTML = '<h2>The Game Has Started</h2>';
-        gameControl.innerHTML += '<button id="quit">Wanna Quit?</button>';
+        gameControl.innerHTML += '<button id="quit" class="click">Wanna Quit?</button>';
 
         document.getElementById('quit').addEventListener('click', function(){
             location.reload();
@@ -63,6 +74,7 @@ gameData.rollSum*/
         game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
         actionArea.innerHTML = '<button id="roll">Roll the Dice</button>';
         document.querySelector('#roll').addEventListener('click', function(){
+            diceSound.play();
             //console.log('Roll the Dice');
             throwDice();
         })
@@ -74,7 +86,7 @@ gameData.rollSum*/
         gameData.roll1 = Math.floor(Math.random() * 6) + 1;
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
         game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`
-        game.innerHTML += `<img src='${gameData.dice[gameData.roll1-1]}'><img src='${gameData.dice[gameData.roll2-1]}'>`;
+        game.innerHTML += `<img src='${gameData.dice[gameData.roll1-1]}' class='dice-gap'><img src='${gameData.dice[gameData.roll2-1]}'>`;
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
         if(gameData.rollSum === 2){
@@ -95,9 +107,11 @@ gameData.rollSum*/
             gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
             actionArea.innerHTML = '<button id="rollagain">Roll Again</button>  <button id="pass">Pass</button>'
             document.getElementById('rollagain').addEventListener('click', function(){
+                diceSound.play();
                 setUpTurn();
             });
             document.getElementById('pass').addEventListener('click', function(){
+                clickSound.play();
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
                 setUpTurn();
             });
@@ -124,5 +138,13 @@ gameData.rollSum*/
         currentScore1.innerHTML = `${gameData.score[0]}`;
         currentScore2.innerHTML = `${gameData.score[1]}`;
     }
+
+    //sound effect
+    startGame.addEventListener('mousedown', function () {
+        clickSound.play();
+    });
+    start.addEventListener('mousedown', function () {
+        startSound.play();
+    });
 
 })();
