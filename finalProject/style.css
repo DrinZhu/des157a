@@ -1,0 +1,178 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('images/bgImage2.png');
+    background-size: cover; /* This will ensure that the image covers the whole page */
+    background-position: center center; /* This centers the image in the viewport */
+    background-repeat: no-repeat; /* This will prevent the image from repeating */
+    background-attachment: fixed; /* This will ensure that the image does not scroll with the page */
+}
+
+#homePage {
+    background-color: white;
+    margin: 100px;
+    margin-left: 230px;
+    margin-right: 230px;
+    padding: 60px;
+    border: #000046 14px solid;
+    border-radius: 30px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 200px;
+}
+
+#homePage h1 {
+    font-weight: 900;
+    font-size: 32px;
+    text-align: center;
+}
+
+#start {
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    color: #000046;
+    margin: 10px;
+    padding: 10px;
+    width: 163px;
+    font-weight: 900;
+    font-size: 20px;
+    border: 8px solid #000046;
+    border-radius: 30px;
+    transition: background-color 0.3s ease-in-out;
+    margin-left: 330px;
+}
+
+#start:hover {
+    color: white;
+    background-color: #000046;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: none;
+}
+
+header {
+    margin: 0 auto; /* Center the header horizontally */
+    display: flex;
+    justify-content: center; /* Center the child elements horizontally */
+    align-items: center; /* Center the child elements vertically */
+    margin-top: -65px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 96px;
+    color: #000046;
+}
+
+header img {
+    margin-left: 20px; /* Adjust the value as needed for space between image and h1 */
+}
+
+#previous {
+    margin-top: 550px;
+    padding-left: 30px;
+}
+
+#next {
+    margin-top: 550px;
+    padding-right: 30px;
+}
+
+main {
+    display: flex;
+    position: relative; /* Add this to position children relative to main */
+    margin: 0 auto; /* Center the header horizontally */
+    justify-content: space-between;
+    /* justify-content: center; Center the child elements horizontally */
+    align-items: center; /* Center the child elements vertically */
+    margin-top: -380px;
+}
+
+.card {
+    position: absolute;
+    transform: translateX(215px); /* Center the card */
+}
+
+section:first-of-type {
+    z-index: 1;
+}
+
+section {
+    position: absolute;
+    z-index: 0;
+    background-color: #ededf4;
+    border: #000046 14px solid;
+    border-radius: 30px;
+    padding: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: #000046 14px solid;
+    border-radius: 30px;
+    padding: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+} */
+
+.left {
+    display: flex;
+    max-width: 75%;
+}
+
+h2{
+    margin: 0;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 10px;
+    margin-top: 30px;
+    margin-left: 130px;
+    color: #898989;
+}
+
+.left p{
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+    background-color: #000046;
+    max-width: 55%;
+    border: #000046 1px solid;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 0%;
+    /* align-items: center; */
+}
+
+.left img {
+    margin-right: 30px;
+}
+
+.right {
+    margin-top: 100px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#cat2 {
+    margin-left: 30px;
+}
+
+.input {
+    display: flex;
+    margin-top: 90px;
+    margin-left: 10px;
+}
+
+.inputBar {
+    width: 738px;
+    height: 68px;
+    background-color: white;
+    border-radius: 30px;
+    margin-right: 20px;
+}
