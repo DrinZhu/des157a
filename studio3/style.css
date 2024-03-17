@@ -102,4 +102,45 @@ button:hover {
     height: 120px; */
 }
 
+/* Base styles that apply to all screen sizes */
+
+body {
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    line-height: 1.5em;
+}
+
+/* Other base styles... */
+
+/* Responsive styles for screens smaller than 768px */
+
+@media only screen and (max-width: 768px) {
+    #homePage p {
+        margin: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .gameContent {
+        flex-direction: column;
+    }
+
+    #currentScore1, #currentScore2 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 100%; /* Make score take full width */
+        margin-left: 0; /* Remove margin-left */
+        font-size: 50px; /* Adjust font size */
+    }
+
+    button {
+        width: auto; /* Make buttons adjust to content */
+        padding: 10px 20px; /* Increase padding */
+    }
+}
+
 
